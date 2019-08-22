@@ -52,6 +52,7 @@ function eatTail(head, arr){
     for(let i = 0; i < arr.length; i++){
         if(head.x == arr[i].x && head.y == arr[i].y)
         clearInterval(game);
+        alert("Kolai pidor\nScore:" + score);
     }
 }
 
@@ -93,6 +94,7 @@ function drawGame(){
     if (snakeX < 0 || snakeX > box * 18
         || snakeY < box || snakeY > box * 18) {
             clearInterval(game);
+            alert("Kolai pidor\nScore:" + score);
         }
 
     if (dir == "left") snakeX -= box;
