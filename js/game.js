@@ -16,6 +16,7 @@ snakeHead.src = "img/snakeHead.png";
 const borderTop = new Image();
 borderTop.src = "img/borderTop.png";
 
+let alertText;
 
 let box = 32;
 
@@ -50,9 +51,10 @@ function direction(event){
 
 function eatTail(head, arr){
     for(let i = 0; i < arr.length; i++){
-        if(head.x == arr[i].x && head.y == arr[i].y)
-        alert("Kolai pidor\nScore:" + score);
+        if(head.x == arr[i].x && head.y == arr[i].y){
+        
         clearInterval(game);
+    }
         
     }
 }
@@ -65,13 +67,13 @@ function drawGame(){
 
     for (let i = 0; i < snake.length; i++){
         if (i) {
-            ctx.fillStyle = "lightgreen";
-            ctx.fillRect(snake[i].x, snake[i].y, box, box);}
-            // ctx.drawImage(snakeBody, snake[i].x, snake[i].y)}
+            // ctx.fillStyle = "lightgreen";
+            // ctx.fillRect(snake[i].x, snake[i].y, box, box);}
+            ctx.drawImage(snakeBody, snake[i].x, snake[i].y)}
         else {
-            // ctx.drawImage(snakeHead, snake[i].x, snake[i].y);
-            ctx.fillStyle = "grey";
-            ctx.fillRect(snake[i].x, snake[i].y, box, box);
+            ctx.drawImage(snakeHead, snake[i].x, snake[i].y);
+            // ctx.fillStyle = "grey";
+            // ctx.fillRect(snake[i].x, snake[i].y, box, box);
             }
     }
 
@@ -94,7 +96,7 @@ function drawGame(){
 
     if (snakeX < 0 || snakeX > box * 18
         || snakeY < box || snakeY > box * 18) {
-            alert("Kolai pidor\nScore:" + score);
+          
             clearInterval(game);
             
         }
@@ -112,5 +114,6 @@ function drawGame(){
     eatTail(newHead, snake);
     snake.unshift(newHead);
 }
+
 
 let game = setInterval(drawGame,100);
