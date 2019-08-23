@@ -52,8 +52,7 @@ function direction(event){
 function eatTail(head, arr){
     for(let i = 0; i < arr.length; i++){
         if(head.x == arr[i].x && head.y == arr[i].y){
-        
-        clearInterval(game);
+            endGame();
     }
         
     }
@@ -96,8 +95,7 @@ function drawGame(){
 
     if (snakeX < 0 || snakeX > box * 18
         || snakeY < box || snakeY > box * 18) {
-          
-            clearInterval(game);
+            endGame();
             
         }
 
@@ -117,3 +115,28 @@ function drawGame(){
 
 
 let game = setInterval(drawGame,100);
+
+function endGame(){
+
+    clearInterval(game); 
+    let mes = document.getElementById("message");
+    mes.innerText = "You lose. Your score: " + score;
+    mes.style.cssText = "background-color: darkred;";
+    
+}
+function StartNewGame(){
+    
+    clearInterval(game); 
+    snake = [];
+    snake[0] = {
+    x: 9 * box, 
+    y: 9 * box
+    }
+    dir = null;
+    score = 0;
+    let mes = document.getElementById("message");
+    mes.innerText = "You can play";
+    mes.style.cssText = "background-color: green;";
+    game = setInterval(drawGame,100);
+
+}
