@@ -5,7 +5,7 @@ const ground = new Image();
 ground.src = "img/background.jpg";
 
 const foodImg = new Image();
-foodImg.src = "img/food.png";
+foodImg.src = "img/foodFirst.png";
 
 const snakeBody = new Image();
 snakeBody.src = "img/snakeBody.png";
@@ -15,6 +15,27 @@ snakeHead.src = "img/snakeHead.png";
 
 const borderTop = new Image();
 borderTop.src = "img/borderTop.png";
+
+function customize(){
+    let foodpicture = document.getElementsByName("food");
+    for (let i = 0; i<foodpicture.length; i++) {
+        if(foodpicture[i].checked){
+            foodImg.src = foodpicture[i].value;
+            // console.log(foodpicture[i].value);
+        }
+    }
+    let snakePicture = document.getElementsByName("snakeType");
+    for (let i = 0; i < snakePicture.length; i++) {
+        if(snakePicture[i].checked.value == "firstSnake"){
+            snakeHead.src = "img/snakeHead.png";
+            snakeBody.src = "img/snakeBody.png";
+            }
+            else {
+                snakeHead.src = "img/snakeHeadSecond.png";
+                snakeBody.src = "img/snakeBodySecond.png";
+            }
+    }
+}
 
 let alertText;
 
@@ -93,23 +114,26 @@ function drawGame(){
         snake.pop();
     }
 
-    if (snakeX < 0 || snakeX > box * 18
-        || snakeY < box || snakeY > box * 18) {
+    if (snakeX < 0 || snakeX > box * 18 || snakeY < box || snakeY > box * 18)
+        {
             endGame();
-            
         }
 
-    if (dir == "left") snakeX -= box;
-    if (dir == "right") snakeX += box;
-    if (dir == "up") snakeY -= box;
-    if (dir == "down") snakeY += box;
-
     let newHead = {
-        x: snakeX,
-        y: snakeY
+            x: snakeX,
+            y: snakeY
     };
 
+    
+
+    if (dir == "left") newHead.x -= box;
+    if (dir == "right") newHead.x += box;
+    if (dir == "up") newHead.y -= box;
+    if (dir == "down") newHead.y += box;
+
     eatTail(newHead, snake);
+
+    
     snake.unshift(newHead);
 }
 
@@ -140,3 +164,20 @@ function StartNewGame(){
     game = setInterval(drawGame,100);
 
 }
+
+$(document).on("click", ".naccs .menu div", function() {
+	var numberIndex = $(this).index();
+
+	if (!$(this).is("active")) {
+		$(".naccs .menu div").removeClass("active");
+		$(".naccs ul li").removeClass("active");
+
+		$(this).addClass("active");
+		$(".naccs ul").find("li:eq(" + numberIndex + ")").addClass("active");
+
+		var listItemHeight = $(".naccs ul")
+			.find("li:eq(" + numberIndex + ")")
+			.innerHeight();
+		$(".naccs ul").height(listItemHeight + "px");
+	}
+});

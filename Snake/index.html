@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Snake (JS)</title>
+    
+</head>
+<body>
+
+        <div class="naccs">
+                <div class="grid">
+                 <div class="gc gc--1-of-3">
+                  <div class="menu">
+                   <div class="active"><span class="light"></span><span>Game</span></div>
+                   <div><span class="light"></span><span>Customize</span></div>
+                  
+                  </div>
+                 </div>
+                 <div class="gc gc--2-of-3">
+                  <ul class="nacc">
+                   <li class="active">
+                    <div  style="text-align: center;">
+                     <p>
+                        <h2 id="message">You can play</h2>
+                        <canvas id="game" width="608" height="608">
+                        </canvas>
+                        <input type="button" class="btn" onclick="StartNewGame()" value="Restart">
+                     </p>
+                    </div>
+                   </li>
+                   <li>
+                    <div>
+                     <p>
+                            <div class="main">
+        
+                                    <div class="custom">
+                                        <div style="text-align: center;">
+                                            <h2>Customize</h2>
+                                           
+                                            <div id="foodChange">
+                                                <input type="radio" name="food" value="img/foodFirst.png" checked>
+                                                <img src="img/foodFirst.png">
+                                                <input type="radio" name="food" value="img/foodSecond.png">
+                                                <img src="img/foodSecond.png">
+                                                <input type="radio" name="food" value="img/foodThird.png">
+                                                <img src="img/foodThird.png">
+                                            </div>
+                                          
+                                            <div id="snakeBodyAndTail">
+                                                <input type="radio" name="snakeType" value="firstSnake" checked>
+                                                <img src="img/snakeHead.png">
+                                                <img src="img/snakeBody.png">
+                            
+                                                <input type="radio" name="snakeType" value="secondSnake">
+                                                <img src="img/snakeHeadSecond.png">
+                                                <img src="img/snakeBodySecond.png">
+                                            </div>
+                                          
+                                            <input type="button" class="btn" value="Change" onclick="customize()">
+                                          
+                                           
+                                        </div>
+                                    </div>
+                            </div>
+                     </p>
+                    </div>
+                   </li>
+                  
+                  </ul>
+                 </div>
+                </div>
+               </div>
+
+
+
+
+
+
+
+    
+   
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
