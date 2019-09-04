@@ -3,7 +3,7 @@
     border: 2px solid red;
 } */
 body{
-    background-image: url(https://images.wallpaperscraft.ru/image/fon_pyatna_temnyy_91678_2048x1152.jpg);
+    background-image: url("https://images.wallpaperscraft.ru/image/fon_pyatna_temnyy_91678_2048x1152.jpg");
     background-attachment: fixed;
     /* background-color: rgb(17, 30, 94);   */
     /* background-image: linear-gradient(rgb(138, 6, 6), rgb(1, 0, 2));      */
