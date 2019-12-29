@@ -1,0 +1,66 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    /* background: url(bg.jpg);
+    background-attachment: fixed;
+    background-position: center; */
+}
+
+
+/* Style for navbar */
+
+.side-text{
+    color: #ecf0f1;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    font-size: small;
+}
+
+/* Style for main */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.img-swiper{
+    overflow: hidden;
+    height: 300px;
+    width: 100%;
+}
+.titles{
+    font-size: 35px;
+    margin: 30px;
+}
+/* *{
+    border: red;
+    border-style: solid;
+    border-width: 3;
+} */
+
+.card-header{
+    background-color: #bdc3c7;
+    overflow: hidden;
+   
+}
+.card-body{
+    background-color: #ecf0f1;
+}
+
